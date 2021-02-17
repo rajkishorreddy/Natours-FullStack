@@ -156,12 +156,12 @@ tourSchema.pre(/^find/, function (next) {
   this.start = Date.now();
   next();
 });
-tourSchema.post(/^find/, function (docs, next) {
-  console.log(`Quary took ${Date.now() - this.start} milliseconds`);
-  //console.log(docs);
+// tourSchema.post(/^find/, function (docs, next) {
+//   console.log(`Quary took ${Date.now() - this.start} milliseconds`);
+//   //console.log(docs);
 
-  next();
-});
+//   next();
+// });
 tourSchema.pre(/^find/, function (next) {
   this.populate({
     path: 'guides',

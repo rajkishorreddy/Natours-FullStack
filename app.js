@@ -7,6 +7,7 @@ const hpp = require('hpp');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const cookieParser = require('cookie-parser');
+const compression = require('compression');
 const tourRouter = require('./routes/tourRoutes');
 const userRouter = require('./routes/userRoutes');
 const reviewRouter = require('./routes/reviewRoutes');
@@ -68,7 +69,7 @@ app.use(
     ],
   })
 );
-
+app.use(compression()); //compress all the text send to the client
 //TEST MIDDLE WARE
 // app.use((req, res, next) => {
 //   console.log('hellow from the middleware');
