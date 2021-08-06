@@ -1,5 +1,5 @@
 // const catchAsync = require('../utils/catchAsync');
-const Review = require('./../models/reviewModel');
+const Review = require('../models/reviewModel');
 const factory = require('./handlerFactory');
 
 exports.getReviews = factory.getAll(Review);

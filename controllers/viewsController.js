@@ -38,6 +38,11 @@ exports.login = (req, res) => {
     title: 'Log into your account',
   });
 };
+exports.signup = (req, res) => {
+  res.status(200).set('Content-Security-Policy', csp).render('signup', {
+    title: 'Create new Account',
+  });
+};
 exports.getAccount = (req, res) => {
   res.status(200).set('Content-Security-Policy', csp).render('account', {
     title: 'yout account',

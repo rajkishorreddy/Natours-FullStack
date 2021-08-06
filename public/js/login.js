@@ -23,6 +23,29 @@ export const login = async (email, password) => {
     showAlert('error', err.response.data.message);
   }
 };
+export const signup = async (email,name,passwordConfirm, password) => {
+  try {
+    const res = await axios({
+      method: 'POST',
+      url: '/api/v1/users/signup',
+      data: {
+        name,
+        email,
+        password,
+        passwordConfirm,
+      },
+    });
+    if (res.data.status === 'success') {
+      showAlert('success', `Accound created successfullly!`);
+      window.setTimeout(() => {
+        location.assign('/');
+      }, 1000);
+      // console.log(res);
+    }
+  } catch (err) {
+    showAlert('error', err.response.data.message);
+  }
+};
 export const logout = async () => {
   try {
     const res = await axios({
